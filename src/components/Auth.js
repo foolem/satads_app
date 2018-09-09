@@ -34,7 +34,7 @@ export default class Auth extends React.Component {
   handleLogin = () => {
     const request = axios({
       method: 'post',
-      url: 'https://satads-staging.herokuapp.com/api/v1/auth/sign_in',
+      url: 'https://satads.herokuapp.com/api/v1/auth/sign_in',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export default class Auth extends React.Component {
          />
         <View style={ styles.header }>
           <Image
-            source={require('../images/hashtag.png')}
+            source={ require('../images/hashtag.png') }
             style={ styles.hashtag }
           />
         </View>

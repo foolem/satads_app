@@ -6,7 +6,6 @@ import Modal from "react-native-modal";
 import axios from 'axios';
 import Scanner from './Scanner';
 
-
 export default class Courses extends React.Component {
 
   constructor(props) {
@@ -42,7 +41,7 @@ export default class Courses extends React.Component {
   getCourses = () => {
     const request = axios({
       method: 'get',
-      url: 'https://satads-staging.herokuapp.com/api/v1/cursos',
+      url: 'https://satads.herokuapp.com/api/v1/cursos',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -128,8 +127,8 @@ export default class Courses extends React.Component {
           isVisible={ this.state.modalVisible }
           animationIn= 'slideInRight'
           animationOut= 'slideOutLeft'
-          onBackdropPress={() => this.toggleModal()}
-          onSwipe={() => this.toggleModal()}
+          onBackdropPress={ () => this.toggleModal() }
+          onSwipe={ () => this.toggleModal() }
           swipeDirection="right"
         >
           <Scanner auth={ this.state.auth } itemId={ this.state.itemId } type="curso" />

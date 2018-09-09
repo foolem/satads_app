@@ -15,7 +15,7 @@ export default class Scanner extends React.Component {
 
     const request = axios({
       method: 'get',
-      url: `https://satads-staging.herokuapp.com/api/v1/participantes/${e.data}/check_in/${this.props.type}/${this.props.itemId}`,
+      url: `https://satads.herokuapp.com/api/v1/participantes/${e.data}/check_in/${this.props.type}/${this.props.itemId}`,
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export default class Scanner extends React.Component {
           bottomContent={
             <TouchableOpacity
               style={ styles.buttonTouchable }
-              onPress={() => this.resetScanner()}
+              onPress={ () => this.resetScanner() }
             >
               <Icon
                 name='repeat'
@@ -75,7 +75,7 @@ export default class Scanner extends React.Component {
             </TouchableOpacity>
           }
           />
-        <FlashMessage ref="scannerFlash" position="top" duration={2500} />
+        <FlashMessage ref="scannerFlash" position="top" duration={ 2500 } />
       </View>
     );
   }

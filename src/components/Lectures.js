@@ -43,7 +43,7 @@ export default class Lectures extends React.Component {
   getLectures = () => {
     const request = axios({
       method: 'get',
-      url: 'https://satads-staging.herokuapp.com/api/v1/palestras',
+      url: 'https://satads.herokuapp.com/api/v1/palestras',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ export default class Lectures extends React.Component {
       }
 
       this.setState({
-        day: response.data[0].day,
+        day: `Dia ${response.data[0].day}`,
       })
 
       this.setState({
@@ -140,9 +140,9 @@ export default class Lectures extends React.Component {
   }
 
   onRefresh = () => {
-    this.setState({refreshing: true});
+    this.setState({ refreshing: true });
     this.getLectures();
-    this.setState({refreshing: false});
+    this.setState({ refreshing: false });
   }
 
   render() {
@@ -158,7 +158,7 @@ export default class Lectures extends React.Component {
             style={ styles.hashtag }
           />
         </View>
-        <Text style={ styles.currentDay }> Dia { this.state.day } </Text>
+        <Text style={ styles.currentDay }> { this.state.day } </Text>
         <FlatList
         contentContainerStyle={ styles.container }
           data={ this.state.lectures }
@@ -176,8 +176,8 @@ export default class Lectures extends React.Component {
           isVisible={ this.state.modalVisible }
           animationIn= 'slideInRight'
           animationOut= 'slideOutLeft'
-          onBackdropPress={() => this.toggleModal()}
-          onSwipe={() => this.toggleModal()}
+          onBackdropPress={ () => this.toggleModal() }
+          onSwipe={ () => this.toggleModal() }
           swipeDirection="right"
         >
           <Scanner auth={ this.state.auth } itemId={ this.state.itemId } type="palestra" />
