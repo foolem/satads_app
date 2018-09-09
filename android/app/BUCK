@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.satads_app",
+    package = "com.satads2018",
 )
 
 android_resource(
     name = "res",
-    package = "com.satads_app",
+    package = "com.satads2018",
     res = "src/main/res",
 )
 

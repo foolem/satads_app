@@ -1,4 +1,4 @@
-package com.satads_app;
+package com.satads2018;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "satads_app";
+        return "SATADS2018";
     }
 }
